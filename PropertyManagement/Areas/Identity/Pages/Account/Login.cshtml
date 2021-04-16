@@ -26,8 +26,8 @@
                 <div class="form-group">
                     <div class="checkbox">
                         <label asp-for="Input.RememberMe">
-                            <input asp-for="Input.Password" />
-                            @CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>()
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
                     </div>
                 </div>
