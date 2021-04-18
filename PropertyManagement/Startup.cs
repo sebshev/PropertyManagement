@@ -79,6 +79,8 @@ namespace PropertyManagement
                                     .CreateScope();
             IdentityHelper.CreateRoles(serviceProvider.ServiceProvider, IdentityHelper.Realtor
                                         , IdentityHelper.Buyer).Wait();
+            IdentityHelper.CreateDefaultRealtor(serviceProvider.ServiceProvider).Wait();
+
         }
     }
 }

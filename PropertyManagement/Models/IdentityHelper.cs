@@ -39,5 +39,31 @@ namespace PropertyManagement.Models
                 }
             }
         }
+
+        public static async Task CreateDefaultRealtor(IServiceProvider serviceProvider)
+        {
+            const string email = "realtor1@realtor.com";
+            const string username = "realtor1";
+            const string password = "Ibuyhouses";
+
+            var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+            // check if any users in DB
+            if (userManager.Users.Count() == 0)
+            {
+                IdentityUser realtor = new IdentityUser()
+                {
+                    Email = email,
+                    UserName = username
+
+                };
+
+                // Create the realtor
+                await userManager.CreateAsync(realtor, password);
+
+                // Add to realtor role
+                await userManager.AddToRoleAsync(realtor, Realtor);
+            }
+        }
     }
 }
