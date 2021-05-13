@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PropertyManagement.Models;
 
 namespace PropertyManagement.Data
 {
@@ -12,5 +13,6 @@ namespace PropertyManagement.Data
             : base(options)
         {
         }
+        public DbSet<PropertyManagement.Models.Property> Property { get; set; }
     }
 }
