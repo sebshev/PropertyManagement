@@ -11,6 +11,7 @@ namespace PropertyManagement.Models
     {
         public const string Realtor = "Realtor";
         public const string Buyer = "Buyer";
+        public const string RealtorOrBuyer = "Realtor,Buyer";
 
         public static void SetIdentityOptions(IdentityOptions options)
         {
